@@ -18,9 +18,15 @@ if [ "$OWNCLOUD_TRUSTED_DOMAINS" == "localhost" ]; then
     OTHER_TRUSTED_DOMAIN=$(<trusted_domains.txt)
   fi
   if [ "$OTHER_TRUSTED_DOMAIN" != "" ]; then
-    OWNCLOUD_TRUSTED_DOMAIN="localhost,$OTHER_TRUSTED_DOMAIN"
+    OWNCLOUD_TRUSTED_DOMAINS="localhost,$OTHER_TRUSTED_DOMAIN"
   fi
 fi
+
+echo Hosts assigned to OwnCloud: $OWNCLOUD_TRUSTED_DOMAINS
+echo Username..................: $ADMIN_USERNAME
+echo Password..................: $ADMIN_PASSWORD
+echo Published Port............: $HTTP_PORT
+
 
 
 
